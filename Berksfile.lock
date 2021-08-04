@@ -1,0 +1,10 @@
+DEPENDENCIES
+  line (~> 4.0.1)
+  pepper
+    path: .
+    metadata: true
+
+GRAPH
+  line (4.0.1)
+  pepper (1.0.0)
+    line (>= 0.0.0)

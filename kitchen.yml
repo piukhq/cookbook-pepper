@@ -1,0 +1,28 @@
+---
+driver:
+  name: azurerm
+  location: "UK South"
+  machine_size: "Standard_D4as_v4"
+
+transport:
+  ssh_key: ~/.ssh/id_bink_azure_terraform
+
+provisioner:
+  name: chef_solo
+  chef_license: accept-no-persist
+  # solo_rb:
+  #   environment: vagrant
+
+platforms:
+- name: bento/ubuntu-20.04
+  driver:
+    image_urn: Canonical:0001-com-ubuntu-server-focal:20_04-lts:latest
+    vm_name: pepper
+
+verifier:
+  name: inspec
+
+suites:
+- name: pepper
+  run_list:
+  - recipe[pepper]
